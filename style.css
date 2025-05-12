@@ -1,0 +1,339 @@
+/* ================================
+   Reset & Base
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Amsi Pro AKS Normal', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ================================
+   Fonts
+================================ */
+@font-face {
+  font-family: 'Amsi Pro AKS Normal';
+  src: url('fonts/AmsiProAKSNormal-Light.ttf') format('truetype');
+}
+
+/* ================================
+   Animations
+================================ */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-zoom.active {
+  animation: fadeZoomIn 1s ease-in-out forwards;
+}
+
+/* ================================
+   Navbar
+================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131313;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.navbar.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.navbar:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Transparent Navbar Variant */
+.transparent-navbar {
+  background-color: transparent !important;
+  box-shadow: none;
+  transition: background-color 0.3s ease;
+}
+
+.transparent-navbar .menu-opener span,
+.transparent-navbar .user-icon a {
+  color: #fff;
+}
+
+.transparent-navbar .default-logo {
+  display: block;
+}
+
+.transparent-navbar .hover-logo {
+  display: none;
+}
+
+/* ================================
+   Menu Opener (Hamburger)
+================================ */
+.menu-opener {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 15px;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-opener span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  border-radius: 1px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover .menu-opener span {
+  background-color: #000;
+}
+
+/* ================================
+   Logo
+================================ */
+.logo img {
+  height: 40px;
+  width: auto;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo .default-logo {
+  display: block;
+}
+
+.navbar:hover .default-logo {
+  display: none;
+}
+
+.navbar:hover .hover-logo {
+  display: block;
+}
+
+/* ================================
+   User Icon
+================================ */
+.user-icon a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.user-icon a i {
+  transition: color 0.3s ease;
+  color: #fff;
+}
+
+.navbar:hover .user-icon a i {
+  color: #000;
+}
+
+/* ================================
+   Slide-in Menu
+================================ */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.menu ul li {
+  margin: 15px 0;
+}
+
+.menu ul li a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu ul li a:hover {
+  background-color: #e0e0e0;
+}
+
+/* ================================
+   Welcome Section
+================================ */
+.welcome-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.welcome-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.welcome-text {
+  position: absolute;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.welcome-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.welcome-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.start-buying-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 20px;
+  border: 2px solid white;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.start-buying-btn:hover {
+  background-color: white;
+  color: #131313;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ================================
+   Featured Models
+================================ */
+
+.featured-models h2 {
+    margin: 20px 0;
+    font-size: 1.5rem;
+}
+
+.featured-models .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 0 20px 0 20px;
+}
+
+.featured-models .model {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.featured-models .model img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   Brand History
+================================ */
+.brand-history {
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.brand-history h2 {
+  margin-bottom: 10px;
+}
+
+.brand-history p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================================
+   Footer
+================================ */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #131313;
+  color: #fff;
+  font-size: 0.9rem;
+}

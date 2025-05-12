@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheeCoot</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="menu-opener" aria-label="Open menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="logo">
+        <img src="plain white png.png" alt="CheeCoot Logo" class="default-logo">
+        <img src="plain black png.png" alt="CheeCoot Inverted Logo" class="hover-logo">
+      </div>
+
+      <div class="user-icon">
+        <a href="login.html" aria-label="User Login">
+          <i class="fa-regular fa-user"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="menu" role="navigation" aria-label="Site menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#models">Models</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#account"><strong>MyCheeCoot</strong></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="welcome-section">
+      <video autoplay muted loop class="background-video">
+        <source src="home bg.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="welcome-text">
+        <h1>Welcome to CheeCoot</h1>
+        <p>Your destination for the finest automotive models and luxury experiences.</p>
+        <a href="#shop" class="start-buying-btn">Start Buying</a>
+      </div>
+    </section>
+
+    <section id="models" class="featured-models fade-zoom">
+      <h2>Featured Models</h2>
+      <div class="grid">
+        <div class="model fade-zoom">
+          <img src="porsche.jpg" alt="Porsche 911">
+          <h3>Porsche 911</h3>
+          <p>A timeless sports car blending luxury, performance, and iconic design.</p>
+        </div>
+        <div class="model fade-zoom">
+          <img src="lambo.png" alt="Lamborghini Aventador">
+          <h3>Lamborghini Aventador</h3>
+          <p>Known for aggressive design and roaring V12 power, built for thrills.</p>
+        </div>
+        <div class="model fade-zoom">
+          <img src="aston.png" alt="Aston Martin Valhalla">
+          <h3>Aston Martin Valhalla</h3>
+          <p>It features a mid-engine layout and advanced aerodynamics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="history" class="brand-history">
+      <h2>Our History</h2>
+      <p>
+        CheeCoot has been a pioneer in the automotive industry, delivering
+        excellence and innovation since its inception.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CheeCoot. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
